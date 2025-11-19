@@ -7,7 +7,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: sa_db
+      MYSQL_DATABASE: SA
     ports:
       - "3307:3306"
     volumes:

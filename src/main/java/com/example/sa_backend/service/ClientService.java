@@ -33,6 +33,9 @@ public class ClientService {
 
     public Client lireOuCreer(Client clientACreer) {
         Client clientDanslaBDD = this.clientRepository.findByEmail(clientACreer.getEmail());
-
+        if(clientDanslaBDD ==null){
+            clientDanslaBDD = this.clientRepository.save(clientACreer);
+        }
+        return clientDanslaBDD;
     }
 }
