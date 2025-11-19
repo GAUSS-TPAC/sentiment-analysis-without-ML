@@ -9,6 +9,7 @@ import java.util.Optional;
 
 @Service
 public class ClientService {
+    
     private ClientRepository clientRepository;
 
     public ClientService(ClientRepository clientRepository) {
@@ -28,5 +29,10 @@ public class ClientService {
         Optional<Client> optionalClient = this.clientRepository.findById(id);
 
         return optionalClient.orElse(null);
+    }
+
+    public Client lireOuCreer(Client clientACreer) {
+        Client clientDanslaBDD = this.clientRepository.findByEmail(clientACreer.getEmail());
+
     }
 }
